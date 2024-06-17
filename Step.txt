@@ -1,0 +1,72 @@
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master|MERGING)
+$ vi README.md
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master|MERGING)
+$ git add .
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master|MERGING)
+$ git commit -m "Merge: Retained the master changes while doing a merge"
+[master e113ce5] Merge: Retained the master changes while doing a merge
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master)
+$ git log --oneline
+e113ce5 (HEAD -> master) Merge: Retained the master changes while doing a merge
+3931c1a (feature-one) Br: Modified the msg from the feature branch in 2nd line
+d2c9021 Master: Added and edited msg from the master in 2nd line
+59897e6 Master: Added msg from the branch master in 2nd line
+0317f27 Initial version of README.md
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master)
+$ git checkout -
+Switched to branch 'feature-one'
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (feature-one)
+$ git log --oneline
+3931c1a (HEAD -> feature-one) Br: Modified the msg from the feature branch in 2nd line
+0317f27 Initial version of README.md
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (feature-one)
+$ cat README.md
+This is the Initial Message in README.md from the master branch.
+This is the message modified from the feature one branch.
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (feature-one)
+$ git checkout -
+Switched to branch 'master'
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master)
+$ cat README.md
+This is the Initial Message in README.md from the master branch.
+This is message from the message added from the master branch.
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (master)
+$ git checkout -
+Switched to branch 'feature-one'
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (feature-one)
+$ git status
+On branch feature-one
+nothing to commit, working tree clean
+
+A@DESKTOP-V86GNUT MINGW64 ~/Desktop/GIT Training/5. Branching Merging And Rebasing in Git/Resolve-Merge-conflicts-Mod (feature-one)
+$
+
